@@ -3,6 +3,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -16,8 +17,22 @@ import java.util.stream.Stream;
  *  映射 map flatMap
  *  排序 sorted
  * 3. 终止操作
+ *  查找与匹配 allMatch anyMatch noneMatch findFirst findAny count max min forEach
+ *  归约与收集 reduce collect
+ *
+ * 二、并行
+ * parallel
  */
 public class TestStream {
+
+    @Test
+    public void test2() {
+        List<String> list = new ArrayList<>();
+        List<Integer> l = list.stream()
+                            .map(s -> new Integer(s.length()))
+                            .collect(Collectors.toList());
+    }
+
 
     @Test
     public void test1() {
